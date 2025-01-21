@@ -30,13 +30,26 @@ public class Cat {
 
     public String getAge() {
         if (isFemale) {
-            return "This is an inappropriate question!";
+            return checkCompliance();
         } else {
             return Integer.toString(age);
         }
     }
 
 
+    private String checkCompliance(){
+        counter++;
+         switch (counter) {
+             case 1:
+                 return "This is an inappropriate question!"; // 1st time
+             case 2:
+                 return "I've told you once!"; // 2nd time
+             case 3:
+                 return "Talk to the hand!"; // 3rd time 
+             default:
+                 return "fuck off"; //4th ++
+         }
+     }
 
 
 
